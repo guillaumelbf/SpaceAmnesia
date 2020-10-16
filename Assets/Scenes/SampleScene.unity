@@ -355,7 +355,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 550995142646947226, guid: f0654711b43731449bf57f300550888f, type: 3}
       propertyPath: speed
-      value: 10
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 6456208957517566426, guid: f0654711b43731449bf57f300550888f, type: 3}
       propertyPath: m_FlipX
