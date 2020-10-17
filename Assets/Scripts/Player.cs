@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Player : MonoBehaviour
 {
-    Rigidbody2D rigidbody;
+    Rigidbody2D mRigidbody;
 
     [SerializeField] float speed = 0;
 
@@ -13,7 +13,7 @@ public class Player : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        rigidbody = GetComponent<Rigidbody2D>();
+        mRigidbody = GetComponent<Rigidbody2D>();
     }
 
     // Update is called once per frame
@@ -24,21 +24,21 @@ public class Player : MonoBehaviour
 
     private void FixedUpdate()
     {
-        rigidbody.velocity = Vector2.zero;
+        mRigidbody.velocity = Vector2.zero;
         verticalMove(Input.GetAxisRaw("Vertical"));
         horizontalMove(Input.GetAxisRaw("Horizontal"));
-        rigidbody.velocity = rigidbody.velocity.normalized * speed;
+        mRigidbody.velocity = mRigidbody.velocity.normalized * speed;
     }
 
     void verticalMove(float _direction)
     {
         if(_direction.Equals(1))
         {
-            rigidbody.velocity = Vector2.SmoothDamp(rigidbody.velocity, Vector2.up, ref curVeclocity,0.05f);
+            mRigidbody.velocity = Vector2.SmoothDamp(mRigidbody.velocity, Vector2.up, ref curVeclocity,0.05f);
         }
         else if(_direction.Equals(-1))
         {
-            rigidbody.velocity = Vector2.SmoothDamp(rigidbody.velocity, Vector2.down, ref curVeclocity, 0.05f);
+            mRigidbody.velocity = Vector2.SmoothDamp(mRigidbody.velocity, Vector2.down, ref curVeclocity, 0.05f);
         }
     }
 
@@ -46,11 +46,11 @@ public class Player : MonoBehaviour
     {
         if (_direction.Equals(1))
         {
-            rigidbody.velocity = Vector2.SmoothDamp(rigidbody.velocity, Vector2.right, ref curVeclocity, 0.05f);
+            mRigidbody.velocity = Vector2.SmoothDamp(mRigidbody.velocity, Vector2.right, ref curVeclocity, 0.05f);
         }
         else if (_direction.Equals(-1))
         {
-            rigidbody.velocity = Vector2.SmoothDamp(rigidbody.velocity, Vector2.left, ref curVeclocity, 0.05f);
+            mRigidbody.velocity = Vector2.SmoothDamp(mRigidbody.velocity, Vector2.left, ref curVeclocity, 0.05f);
         }
     }
 }
