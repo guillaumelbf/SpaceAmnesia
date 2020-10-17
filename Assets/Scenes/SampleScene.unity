@@ -357,6 +357,26 @@ PrefabInstance:
       propertyPath: speed
       value: 5
       objectReference: {fileID: 0}
+    - target: {fileID: 856112313744659778, guid: f0654711b43731449bf57f300550888f, type: 3}
+      propertyPath: m_Name
+      value: ChatBoxBG
+      objectReference: {fileID: 0}
+    - target: {fileID: 2343817977636959833, guid: f0654711b43731449bf57f300550888f, type: 3}
+      propertyPath: m_TagString
+      value: ChatBox
+      objectReference: {fileID: 0}
+    - target: {fileID: 2519045342612388853, guid: f0654711b43731449bf57f300550888f, type: 3}
+      propertyPath: maxTalkTime
+      value: 1.84
+      objectReference: {fileID: 0}
+    - target: {fileID: 2519045342612388853, guid: f0654711b43731449bf57f300550888f, type: 3}
+      propertyPath: thinkingBackgroundSprite
+      value: 
+      objectReference: {fileID: 10907, guid: 0000000000000000f000000000000000, type: 0}
+    - target: {fileID: 2519045342612388853, guid: f0654711b43731449bf57f300550888f, type: 3}
+      propertyPath: talkingBackgroundSprite
+      value: 
+      objectReference: {fileID: 10913, guid: 0000000000000000f000000000000000, type: 0}
     - target: {fileID: 6456208957517566426, guid: f0654711b43731449bf57f300550888f, type: 3}
       propertyPath: m_FlipX
       value: 0
