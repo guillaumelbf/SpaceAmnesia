@@ -5,6 +5,7 @@ using UnityEngine;
 public class Player : MonoBehaviour
 {
     private ChatBox _chatBox;
+    private Dialog _dialogComp;
     
     Rigidbody2D mRigidbody;
 
@@ -16,6 +17,7 @@ public class Player : MonoBehaviour
     void Start()
     {
         _chatBox = GetComponent<ChatBox>();
+        _dialogComp = GameObject.FindGameObjectWithTag("Dialog").GetComponent<Dialog>();
         mRigidbody = GetComponent<Rigidbody2D>();
     }
 
@@ -35,7 +37,7 @@ public class Player : MonoBehaviour
 
     void verticalMove(float _direction)
     {
-        if (_chatBox.isWriting)
+        if (_chatBox.isWriting || _dialogComp.isPrinting || _dialogComp.waitingAction)
             return;
         if(_direction.Equals(1))
         {
@@ -49,7 +51,7 @@ public class Player : MonoBehaviour
 
     void horizontalMove(float _direction)
     {
-        if (_chatBox.isWriting)
+        if (_chatBox.isWriting || _dialogComp.isPrinting || _dialogComp.waitingAction)
             return;
         if (_direction.Equals(1))
         {
