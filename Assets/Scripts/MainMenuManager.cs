@@ -29,6 +29,9 @@ public class MainMenuManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        // Init master volume with the slider
+        masterVolumeAudio.SetFloat("MasterVolume",sliderToVolume(masterVolume.value));
+
         playButton.onClick.AddListener(loadMainScene);
         optionButton.onClick.AddListener(showOptions);
         quitButton.onClick.AddListener(quitScene);
@@ -67,6 +70,11 @@ public class MainMenuManager : MonoBehaviour
 
     void changeMasterValue(float sliderValue)
     {
-        masterVolumeAudio.SetFloat("MasterVolume",Mathf.Log10(sliderValue) * 20);
+        masterVolumeAudio.SetFloat("MasterVolume",sliderToVolume(sliderValue));
+    }
+
+    float sliderToVolume(float sliderValue)
+    {
+        return Mathf.Log10(sliderValue) * 20;
     }
 }
