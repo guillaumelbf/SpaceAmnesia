@@ -22,8 +22,6 @@ public class Player : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.L))
-            Dialog.PrintNewDialog("I can only talk to those who know who I am. >:(", 0.12f, true);
     }
 
     private void FixedUpdate()

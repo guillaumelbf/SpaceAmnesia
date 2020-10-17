@@ -5,8 +5,12 @@ using UnityEngine;
 
 public class TriggerDialog : MonoBehaviour
 {
-    public string dialogText;
-    public float timeBetweenLetters;
+    [SerializeField]
+    public NewDialog[] Dialogs;
+    //public string dialogText;
+    //public float timeBetweenLetters;
+
+    private bool _isIn;
     // Start is called before the first frame update
     void Start()
     {
@@ -16,18 +20,26 @@ public class TriggerDialog : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
-    }
-
-    
-    private void OnTriggerStay2D(Collider2D other)
-    {
-        if (Input.GetButton("Interact"))
+        if (_isIn && Input.GetButtonDown("Interact") && !Dialog.isPrinting && !Dialog.waitingAction)
         {
-            string tempDialog = "";
-            tempDialog += dialogText;
-            tempDialog = tempDialog.Replace("\\n", "\n");
-            Dialog.PrintNewDialog(tempDialog, timeBetweenLetters, true);
+            
+            foreach (NewDialog newDiag in Dialogs)
+            {
+                string tempDialog = newDiag.message;
+                tempDialog = tempDialog.Replace("\\n", "\n");
+                Dialog.AddDialogToBuffer(tempDialog, newDiag.speed, true);
+            }
         }
     }
+
+    private void OnTriggerEnter2D(Collider2D other)
+    {
+        _isIn = true;
+    }
+    
+    private void OnTriggerExit2D(Collider2D other)
+    {
+        _isIn = false;
+    }
+    
 }
