@@ -249,8 +249,8 @@ CapsuleCollider2D:
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
-  m_Size: {x: 1, y: 1}
-  m_Direction: 0
+  m_Size: {x: 1.2, y: 0.47}
+  m_Direction: 1
 --- !u!114 &550995142646947226
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -279,9 +279,8 @@ MonoBehaviour:
   isWriting: 0
   isTalking: 0
   msgChatBox: 
-  chatBox: {fileID: 0}
-  chatBoxBox: {fileID: 0}
-  chatBoxTextPopUp: {fileID: 0}
+  thinkingBackgroundSprite: {fileID: 0}
+  talkingBackgroundSprite: {fileID: 0}
   maxTalkTime: 0
 --- !u!1 &7929262327622379096
 GameObject:
