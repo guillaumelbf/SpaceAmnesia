@@ -9,7 +9,7 @@ public struct NewDialog
 {
     public string message;
     public float  speed;
-    public bool   isWrong;
+    public short  visualHint;
 };
 
 
@@ -73,7 +73,7 @@ public class Dialog : MonoBehaviour
             UpdateWait();
     }
 
-    public void PrintNewDialog(string msg, float dtLetters, bool badInput)
+    public void PrintNewDialog(string msg, float dtLetters, short visualHint)
     {
         if (isPrinting || waitingAction || _chatBox.isWriting)
             return;
@@ -83,9 +83,9 @@ public class Dialog : MonoBehaviour
         _messageToPrint = msg;
         _currMessage = "";
         isPrinting = true;
-        if (badInput)
+        if (visualHint == 0)
             _wrongInput.SetActive(true);
-        else
+        else if (visualHint == 1)
             _rightInput.SetActive(true);
     }
 
@@ -130,17 +130,17 @@ public class Dialog : MonoBehaviour
         if (waitingAction || isPrinting || _dialogBuffer.Count <= 0)
             return;
         
-        PrintNewDialog(_dialogBuffer[0].message, _dialogBuffer[0].speed, _dialogBuffer[0].isWrong);
+        PrintNewDialog(_dialogBuffer[0].message, _dialogBuffer[0].speed, _dialogBuffer[0].visualHint);
         
         
     }
     
-    public static void AddDialogToBuffer(string msg, float speed, bool wrong)
+    public static void AddDialogToBuffer(string msg, float speed, short visualHint)
     {
         NewDialog newDialog = new NewDialog();
         newDialog.message = msg;
         newDialog.speed = speed;
-        newDialog.isWrong = wrong;
+        newDialog.visualHint = visualHint;
         
         _dialogBuffer.Add(newDialog);
     }

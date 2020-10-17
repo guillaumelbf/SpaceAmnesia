@@ -27,7 +27,7 @@ public class TriggerDialog : MonoBehaviour
             {
                 string tempDialog = newDiag.message;
                 tempDialog = tempDialog.Replace("\\n", "\n");
-                Dialog.AddDialogToBuffer(tempDialog, newDiag.speed, true);
+                Dialog.AddDialogToBuffer(tempDialog, newDiag.speed, 2);
             }
         }
     }
