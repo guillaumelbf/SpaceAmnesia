@@ -361,6 +361,46 @@ PrefabInstance:
       propertyPath: m_Name
       value: ChatBoxBG
       objectReference: {fileID: 0}
+    - target: {fileID: 1645220464791394705, guid: f0654711b43731449bf57f300550888f, type: 3}
+      propertyPath: m_fontColor.r
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1645220464791394705, guid: f0654711b43731449bf57f300550888f, type: 3}
+      propertyPath: m_fontColor.g
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1645220464791394705, guid: f0654711b43731449bf57f300550888f, type: 3}
+      propertyPath: m_fontColor.b
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1645220464791394705, guid: f0654711b43731449bf57f300550888f, type: 3}
+      propertyPath: m_fontColor32.rgba
+      value: 4278190080
+      objectReference: {fileID: 0}
+    - target: {fileID: 1645220464791394705, guid: f0654711b43731449bf57f300550888f, type: 3}
+      propertyPath: m_fontSize
+      value: 0.86
+      objectReference: {fileID: 0}
+    - target: {fileID: 1645220464791394705, guid: f0654711b43731449bf57f300550888f, type: 3}
+      propertyPath: m_fontSizeBase
+      value: 0.86
+      objectReference: {fileID: 0}
+    - target: {fileID: 1664692608234954019, guid: f0654711b43731449bf57f300550888f, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 1664692608234954019, guid: f0654711b43731449bf57f300550888f, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 1693553618687741382, guid: f0654711b43731449bf57f300550888f, type: 3}
+      propertyPath: m_Text
+      value: "<s>Barr\xE9</s>"
+      objectReference: {fileID: 0}
+    - target: {fileID: 2212474911284801496, guid: f0654711b43731449bf57f300550888f, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 102.68
+      objectReference: {fileID: 0}
     - target: {fileID: 2343817977636959833, guid: f0654711b43731449bf57f300550888f, type: 3}
       propertyPath: m_TagString
       value: ChatBox
@@ -372,11 +412,51 @@ PrefabInstance:
     - target: {fileID: 2519045342612388853, guid: f0654711b43731449bf57f300550888f, type: 3}
       propertyPath: thinkingBackgroundSprite
       value: 
-      objectReference: {fileID: 10907, guid: 0000000000000000f000000000000000, type: 0}
+      objectReference: {fileID: 21300000, guid: 5148581cb8fcba443bd520b892d23b01, type: 3}
     - target: {fileID: 2519045342612388853, guid: f0654711b43731449bf57f300550888f, type: 3}
       propertyPath: talkingBackgroundSprite
       value: 
-      objectReference: {fileID: 10913, guid: 0000000000000000f000000000000000, type: 0}
+      objectReference: {fileID: 21300000, guid: 252a42a715035e94c9b1b8e94dc83002, type: 3}
+    - target: {fileID: 2876436650888225898, guid: f0654711b43731449bf57f300550888f, type: 3}
+      propertyPath: m_fontAsset
+      value: 
+      objectReference: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+    - target: {fileID: 2876436650888225898, guid: f0654711b43731449bf57f300550888f, type: 3}
+      propertyPath: m_sharedMaterial
+      value: 
+      objectReference: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+    - target: {fileID: 3373928514130945542, guid: f0654711b43731449bf57f300550888f, type: 3}
+      propertyPath: m_DrawMode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3373928514130945542, guid: f0654711b43731449bf57f300550888f, type: 3}
+      propertyPath: m_Size.x
+      value: 0.03
+      objectReference: {fileID: 0}
+    - target: {fileID: 3373928514130945542, guid: f0654711b43731449bf57f300550888f, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 5148581cb8fcba443bd520b892d23b01, type: 3}
+    - target: {fileID: 3373928514130945542, guid: f0654711b43731449bf57f300550888f, type: 3}
+      propertyPath: m_Size.y
+      value: -0.17
+      objectReference: {fileID: 0}
+    - target: {fileID: 5235088673539896171, guid: f0654711b43731449bf57f300550888f, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 4.28
+      objectReference: {fileID: 0}
+    - target: {fileID: 5686794708605100370, guid: f0654711b43731449bf57f300550888f, type: 3}
+      propertyPath: m_CastShadows
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5686794708605100370, guid: f0654711b43731449bf57f300550888f, type: 3}
+      propertyPath: m_ReceiveShadows
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5686794708605100370, guid: f0654711b43731449bf57f300550888f, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
     - target: {fileID: 6456208957517566426, guid: f0654711b43731449bf57f300550888f, type: 3}
       propertyPath: m_FlipX
       value: 0
