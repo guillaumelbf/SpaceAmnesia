@@ -4,9 +4,11 @@ using UnityEngine;
 
 public class Player : MonoBehaviour
 {
-    Rigidbody2D rigidbody;
     private ChatBox _chatBox;
+    private Dialog _dialogComp;
     
+    Rigidbody2D mRigidbody;
+
     [SerializeField] float speed = 0;
 
     private Vector2 curVeclocity = Vector2.zero;
@@ -14,8 +16,9 @@ public class Player : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        rigidbody = GetComponent<Rigidbody2D>();
         _chatBox = GetComponent<ChatBox>();
+        _dialogComp = GameObject.FindGameObjectWithTag("Dialog").GetComponent<Dialog>();
+        mRigidbody = GetComponent<Rigidbody2D>();
     }
 
     // Update is called once per frame
@@ -26,38 +29,37 @@ public class Player : MonoBehaviour
 
     private void FixedUpdate()
     {
-            
-        rigidbody.velocity = Vector2.zero;
+        mRigidbody.velocity = Vector2.zero;
         verticalMove(Input.GetAxisRaw("Vertical"));
         horizontalMove(Input.GetAxisRaw("Horizontal"));
-        rigidbody.velocity = rigidbody.velocity.normalized * speed;
+        mRigidbody.velocity = mRigidbody.velocity.normalized * speed;
     }
 
     void verticalMove(float _direction)
     {
-        if (_chatBox.isWriting)
+        if (_chatBox.isWriting || _dialogComp.isPrinting || _dialogComp.waitingAction)
             return;
         if(_direction.Equals(1))
         {
-            rigidbody.velocity = Vector2.SmoothDamp(rigidbody.velocity, Vector2.up, ref curVeclocity,0.05f);
+            mRigidbody.velocity = Vector2.SmoothDamp(mRigidbody.velocity, Vector2.up, ref curVeclocity,0.05f);
         }
         else if(_direction.Equals(-1))
         {
-            rigidbody.velocity = Vector2.SmoothDamp(rigidbody.velocity, Vector2.down, ref curVeclocity, 0.05f);
+            mRigidbody.velocity = Vector2.SmoothDamp(mRigidbody.velocity, Vector2.down, ref curVeclocity, 0.05f);
         }
     }
 
     void horizontalMove(float _direction)
     {
-        if (_chatBox.isWriting)
+        if (_chatBox.isWriting || _dialogComp.isPrinting || _dialogComp.waitingAction)
             return;
         if (_direction.Equals(1))
         {
-            rigidbody.velocity = Vector2.SmoothDamp(rigidbody.velocity, Vector2.right, ref curVeclocity, 0.05f);
+            mRigidbody.velocity = Vector2.SmoothDamp(mRigidbody.velocity, Vector2.right, ref curVeclocity, 0.05f);
         }
         else if (_direction.Equals(-1))
         {
-            rigidbody.velocity = Vector2.SmoothDamp(rigidbody.velocity, Vector2.left, ref curVeclocity, 0.05f);
+            mRigidbody.velocity = Vector2.SmoothDamp(mRigidbody.velocity, Vector2.left, ref curVeclocity, 0.05f);
         }
     }
 }
