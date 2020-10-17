@@ -1,25 +1,16 @@
 fileFormatVersion: 2
-guid: 2854a21a5f2a00c41be0c1f4099c5ecb
+guid: 5a96ba1b909094642919cf4d933ed78e
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 1497105460503290334
-    second: Decors_2_clean_0
+      213: 3483326650603636188
+    second: Salle_1_tube
   - first:
-      213: 2192310886620998638
-    second: Decors_2_clean_1
+      213: -5715480376875609421
+    second: Salle_1_chaises_1
   - first:
-      213: -6030405044121064978
-    second: Decors_2_clean_2_Table
-  - first:
-      213: 6335446257692325327
-    second: Decors_2_clean_3_Echec
-  - first:
-      213: -6112533297507550810
-    second: Decors_3_clean_1_Bureau
-  - first:
-      213: -6578546564662559306
-    second: Decors_2_clean_5
+      213: 2385904056755917116
+    second: Salle_1_chaises_2
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -107,106 +98,64 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Decors_2_clean_0
+      name: Salle_1_tube
       rect:
         serializedVersion: 2
-        x: 174
-        y: 337
-        width: 2029
-        height: 2771
+        x: 86
+        y: 88
+        width: 276
+        height: 256
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: ed1a89cfb79c6c410800000000000000
-      internalID: 1497105460503290334
+      spriteID: cd581ed1223475030800000000000000
+      internalID: 3483326650603636188
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Decors_2_clean_1
+      name: Salle_1_chaises_1
       rect:
         serializedVersion: 2
-        x: 2290
-        y: 1520
-        width: 2493
-        height: 1917
+        x: 504
+        y: 58
+        width: 243
+        height: 327
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: eeb2442d227ac6e10800000000000000
-      internalID: 2192310886620998638
+      spriteID: 3b21d9f01e88ea0b0800000000000000
+      internalID: -5715480376875609421
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Decors_2_clean_2_Table
+      name: Salle_1_chaises_2
       rect:
         serializedVersion: 2
-        x: 2615
-        y: 2599
-        width: 352
-        height: 236
+        x: 1161
+        y: 85
+        width: 190
+        height: 342
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: ee9a0751092bf4ca0800000000000000
-      internalID: -6030405044121064978
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Decors_2_clean_3_Echec
-      rect:
-        serializedVersion: 2
-        x: 2930
-        y: 1762
-        width: 347
-        height: 247
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: fc534530ec60ce750800000000000000
-      internalID: 6335446257692325327
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Decors_3_clean_1_Bureau
-      rect:
-        serializedVersion: 2
-        x: 1918
-        y: 1447
-        width: 263
-        height: 132
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 6a9b05cf95beb2ba0800000000000000
-      internalID: -6112533297507550810
+      spriteID: c31991b391f6c1120800000000000000
+      internalID: 2385904056755917116
       vertices: []
       indices: 
       edges: []

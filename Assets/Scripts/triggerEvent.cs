@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
 
-public class triggerEvent : MonoBehaviour
+public class TriggerEvent : MonoBehaviour
 {
     [SerializeField] UnityEvent events = null;
     // Start is called before the first frame update

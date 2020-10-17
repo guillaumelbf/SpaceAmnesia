@@ -1,25 +1,19 @@
 fileFormatVersion: 2
-guid: 2854a21a5f2a00c41be0c1f4099c5ecb
+guid: 1d0d5c0d20dfca1409e4c22076d0f9ed
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 1497105460503290334
-    second: Decors_2_clean_0
+      213: -7743675723732729558
+    second: Decors_3_Tube
   - first:
-      213: 2192310886620998638
-    second: Decors_2_clean_1
+      213: -7299695044337385781
+    second: Decors_3_Terminal
   - first:
-      213: -6030405044121064978
-    second: Decors_2_clean_2_Table
+      213: 2960457882625623675
+    second: Decors_3_fence
   - first:
-      213: 6335446257692325327
-    second: Decors_2_clean_3_Echec
-  - first:
-      213: -6112533297507550810
-    second: Decors_3_clean_1_Bureau
-  - first:
-      213: -6578546564662559306
-    second: Decors_2_clean_5
+      213: 7053755134877908928
+    second: Decors_2_fleur
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -107,106 +101,85 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Decors_2_clean_0
+      name: Decors_3_Tube
       rect:
         serializedVersion: 2
-        x: 174
-        y: 337
-        width: 2029
-        height: 2771
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+        x: 1067
+        y: 0
+        width: 622
+        height: 1031
+      alignment: 9
+      pivot: {x: 0.5, y: 0.2}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: ed1a89cfb79c6c410800000000000000
-      internalID: 1497105460503290334
+      spriteID: a21481ff4ffe88490800000000000000
+      internalID: -7743675723732729558
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Decors_2_clean_1
+      name: Decors_3_Terminal
       rect:
         serializedVersion: 2
-        x: 2290
-        y: 1520
-        width: 2493
-        height: 1917
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+        x: 685
+        y: 874
+        width: 378
+        height: 156
+      alignment: 9
+      pivot: {x: 0.5, y: 0.32}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: eeb2442d227ac6e10800000000000000
-      internalID: 2192310886620998638
+      spriteID: bce3799580642ba90800000000000000
+      internalID: -7299695044337385781
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Decors_2_clean_2_Table
+      name: Decors_3_fence
       rect:
         serializedVersion: 2
-        x: 2615
-        y: 2599
-        width: 352
-        height: 236
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+        x: 7
+        y: 248
+        width: 871
+        height: 333
+      alignment: 9
+      pivot: {x: 0.5, y: 0.06}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: ee9a0751092bf4ca0800000000000000
-      internalID: -6030405044121064978
+      spriteID: b76c76252c8a51920800000000000000
+      internalID: 2960457882625623675
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Decors_2_clean_3_Echec
+      name: Decors_2_fleur
       rect:
         serializedVersion: 2
-        x: 2930
-        y: 1762
-        width: 347
-        height: 247
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+        x: 30
+        y: 876
+        width: 613
+        height: 155
+      alignment: 9
+      pivot: {x: 0.5, y: 0.21}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: fc534530ec60ce750800000000000000
-      internalID: 6335446257692325327
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Decors_3_clean_1_Bureau
-      rect:
-        serializedVersion: 2
-        x: 1918
-        y: 1447
-        width: 263
-        height: 132
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 6a9b05cf95beb2ba0800000000000000
-      internalID: -6112533297507550810
+      spriteID: 0cf3cfa3ce8f3e160800000000000000
+      internalID: 7053755134877908928
       vertices: []
       indices: 
       edges: []
