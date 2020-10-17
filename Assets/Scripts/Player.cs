@@ -23,7 +23,7 @@ public class Player : MonoBehaviour
     void Update()
     {
         if (Input.GetKeyDown(KeyCode.L))
-            Dialog.PrintNewDialog("I can only talk to those who know who I am", 0.12f, true);
+            Dialog.PrintNewDialog("I can only talk to those who know who I am. >:(", 0.12f, true);
     }
 
     private void FixedUpdate()
