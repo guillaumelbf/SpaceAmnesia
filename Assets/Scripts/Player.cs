@@ -5,7 +5,8 @@ using UnityEngine;
 public class Player : MonoBehaviour
 {
     Rigidbody2D rigidbody;
-
+    private ChatBox _chatBox;
+    
     [SerializeField] float speed = 0;
 
     private Vector2 curVeclocity = Vector2.zero;
@@ -14,6 +15,7 @@ public class Player : MonoBehaviour
     void Start()
     {
         rigidbody = GetComponent<Rigidbody2D>();
+        _chatBox = GetComponent<ChatBox>();
     }
 
     // Update is called once per frame
@@ -24,6 +26,7 @@ public class Player : MonoBehaviour
 
     private void FixedUpdate()
     {
+            
         rigidbody.velocity = Vector2.zero;
         verticalMove(Input.GetAxisRaw("Vertical"));
         horizontalMove(Input.GetAxisRaw("Horizontal"));
@@ -32,6 +35,8 @@ public class Player : MonoBehaviour
 
     void verticalMove(float _direction)
     {
+        if (_chatBox.isWriting)
+            return;
         if(_direction.Equals(1))
         {
             rigidbody.velocity = Vector2.SmoothDamp(rigidbody.velocity, Vector2.up, ref curVeclocity,0.05f);
@@ -44,6 +49,8 @@ public class Player : MonoBehaviour
 
     void horizontalMove(float _direction)
     {
+        if (_chatBox.isWriting)
+            return;
         if (_direction.Equals(1))
         {
             rigidbody.velocity = Vector2.SmoothDamp(rigidbody.velocity, Vector2.right, ref curVeclocity, 0.05f);
