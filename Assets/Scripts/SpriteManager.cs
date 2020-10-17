@@ -5,7 +5,7 @@ using UnityEngine;
 public class SpriteManager : MonoBehaviour
 {
     [Header("Sprites")]
-    [SerializeField] List<SpriteRenderer> spriteList;
+    [SerializeField] List<SpriteRenderer> spriteList = null;
 
     [Header("Player")]
     [SerializeField] GameObject player;
