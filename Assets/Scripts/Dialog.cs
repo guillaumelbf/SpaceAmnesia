@@ -1,43 +1,62 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 
 public class Dialog : MonoBehaviour
 {
-    private string _messageToPrint;
-    private string _currMessage;
+    private static string _messageToPrint;
+    private static string _currMessage;
     
-    private float _timeBetweenLetters;
-    private float _currTimeBetweenLetters;
+    private static float _timeBetweenLetters;
+    private static float _currTimeBetweenLetters;
 
-    public float freezeTimeAfterPrint;
-    private float _currFreezeTime;
+    public static float freezeTimeAfterPrint;
+    private static float _currFreezeTime;
     
-    public bool isPrinting;
-    public bool waitingAction;
+    public static bool isPrinting;
+    public static bool waitingAction;
 
-    private GameObject _background;
-    private TMP_Text _dialog;
+    private static GameObject _background;
+    private static TMP_Text _dialog;
 
-    private ChatBox _chatBox;
-    // Start is called before the first frame update
-    void Start()
+    private static GameObject _wrongInput;
+    private static GameObject _rightInput;
+
+    private static ChatBox _chatBox;
+
+    private static Dialog _instance;
+
+
+    private void Awake()
     {
-        _background = transform.GetChild(0).gameObject;
-        _dialog = _background.transform.GetChild(0).GetComponent<TMP_Text>();
-        isPrinting = false;
-        waitingAction = false;
-        _background.SetActive(false);
-        _chatBox = GameObject.FindGameObjectWithTag("Player").GetComponent<ChatBox>();
+        if (_instance == null)
+        {
 
+            _instance = this;
+            DontDestroyOnLoad(this.gameObject);
+            
+            _background = transform.GetChild(0).gameObject;
+            _dialog = _background.transform.GetChild(0).GetComponent<TMP_Text>();
+            _wrongInput = _background.transform.GetChild(1).gameObject;
+            _rightInput = _background.transform.GetChild(2).gameObject;
+            isPrinting = false;
+            waitingAction = false;
+            _background.SetActive(false);
+            _wrongInput.SetActive(false);
+            _rightInput.SetActive(false);
+            _chatBox = GameObject.FindGameObjectWithTag("Player").GetComponent<ChatBox>();
+        }
+        else
+            Destroy(this);
     }
-
+        
     // Update is called once per frame
     void Update()
     {
         if (Input.GetKeyDown(KeyCode.E))
-            PrintNewDialog("Salutations, humain.\nComment allez-vous?", 0.05f);
+            PrintNewDialog("Salutations, humain.\nComment allez-vous?", 0.05f, false);
         
         
         if (isPrinting)
@@ -46,7 +65,7 @@ public class Dialog : MonoBehaviour
             UpdateWait();
     }
 
-    public void PrintNewDialog(string msg, float dtLetters)
+    public static void PrintNewDialog(string msg, float dtLetters, bool badInput)
     {
         if (isPrinting || waitingAction || _chatBox.isWriting)
             return;
@@ -56,6 +75,10 @@ public class Dialog : MonoBehaviour
         _messageToPrint = msg;
         _currMessage = "";
         isPrinting = true;
+        if (badInput)
+            _wrongInput.SetActive(true);
+        else
+            _rightInput.SetActive(true);
     }
 
     public void UpdatePrint()
@@ -88,6 +111,9 @@ public class Dialog : MonoBehaviour
         {
             waitingAction = false;
             _background.SetActive(false);
+            _rightInput.SetActive(false);
+            _wrongInput.SetActive(false);
         }
     }
+
 }
