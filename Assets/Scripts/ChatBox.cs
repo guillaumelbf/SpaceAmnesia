@@ -73,7 +73,6 @@ public class ChatBox : MonoBehaviour
         else if (isWriting && Input.GetKeyDown(KeyCode.Return))
         {
             _chatBoxBackground.sprite = talkingBackgroundSprite;
-            Debug.Log(msgChatBox);
             isWriting = false;
             isTalking = true;
             _currTalkTime = maxTalkTime;
