@@ -307,7 +307,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 11
+  m_RootOrder: 12
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &302290247
 GameObject:
@@ -469,7 +469,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 9
+  m_RootOrder: 10
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &471635588
 GameObject:
@@ -854,7 +854,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 10
+  m_RootOrder: 11
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &773397148
 GameObject:
@@ -1014,7 +1014,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 8
+  m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &788252332
 GameObject:
@@ -1630,6 +1630,34 @@ PrefabInstance:
     - target: {fileID: 3857675302935802117, guid: c401a51fa899ce64898d85b5fa5e29a5, type: 3}
       propertyPath: m_Name
       value: TriggerrableZoneDialog
+      objectReference: {fileID: 0}
+    - target: {fileID: 3857675302935802118, guid: c401a51fa899ce64898d85b5fa5e29a5, type: 3}
+      propertyPath: Dialogs.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 3857675302935802118, guid: c401a51fa899ce64898d85b5fa5e29a5, type: 3}
+      propertyPath: Dialogs.Array.data[0].message
+      value: Ceci\nest
+      objectReference: {fileID: 0}
+    - target: {fileID: 3857675302935802118, guid: c401a51fa899ce64898d85b5fa5e29a5, type: 3}
+      propertyPath: Dialogs.Array.data[0].speed
+      value: 0.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3857675302935802118, guid: c401a51fa899ce64898d85b5fa5e29a5, type: 3}
+      propertyPath: Dialogs.Array.data[1].message
+      value: Un\ntest
+      objectReference: {fileID: 0}
+    - target: {fileID: 3857675302935802118, guid: c401a51fa899ce64898d85b5fa5e29a5, type: 3}
+      propertyPath: Dialogs.Array.data[1].speed
+      value: 0.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3857675302935802118, guid: c401a51fa899ce64898d85b5fa5e29a5, type: 3}
+      propertyPath: Dialogs.Array.data[2].message
+      value: sur plusieurs\n lignes
+      objectReference: {fileID: 0}
+    - target: {fileID: 3857675302935802118, guid: c401a51fa899ce64898d85b5fa5e29a5, type: 3}
+      propertyPath: Dialogs.Array.data[2].speed
+      value: 0.06
       objectReference: {fileID: 0}
     - target: {fileID: 3857675302935802119, guid: c401a51fa899ce64898d85b5fa5e29a5, type: 3}
       propertyPath: m_LocalPosition.x

@@ -4,6 +4,15 @@ using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 
+[Serializable]
+public struct NewDialog
+{
+    public string message;
+    public float  speed;
+    public bool   isWrong;
+};
+
+
 public class Dialog : MonoBehaviour
 {
     private static string _messageToPrint;
@@ -28,6 +37,7 @@ public class Dialog : MonoBehaviour
 
     private static Dialog _instance;
 
+    private static List<NewDialog> _dialogBuffer;
 
     private void Awake()
     {
@@ -47,6 +57,7 @@ public class Dialog : MonoBehaviour
             _wrongInput.SetActive(false);
             _rightInput.SetActive(false);
             _chatBox = GameObject.FindGameObjectWithTag("Player").GetComponent<ChatBox>();
+            _dialogBuffer = new List<NewDialog>();
         }
         else
             Destroy(this);
@@ -55,17 +66,14 @@ public class Dialog : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.E))
-            PrintNewDialog("Salutations, humain.\nComment allez-vous?", 0.05f, false);
-        
-        
+        TryRefreshDialog();
         if (isPrinting)
             UpdatePrint();
         else if (waitingAction)
             UpdateWait();
     }
 
-    public static void PrintNewDialog(string msg, float dtLetters, bool badInput)
+    public void PrintNewDialog(string msg, float dtLetters, bool badInput)
     {
         if (isPrinting || waitingAction || _chatBox.isWriting)
             return;
@@ -113,7 +121,28 @@ public class Dialog : MonoBehaviour
             _background.SetActive(false);
             _rightInput.SetActive(false);
             _wrongInput.SetActive(false);
+            _dialogBuffer.RemoveAt(0);
         }
+    }
+
+    private void TryRefreshDialog()
+    {
+        if (waitingAction || isPrinting || _dialogBuffer.Count <= 0)
+            return;
+        
+        PrintNewDialog(_dialogBuffer[0].message, _dialogBuffer[0].speed, _dialogBuffer[0].isWrong);
+        
+        
+    }
+    
+    public static void AddDialogToBuffer(string msg, float speed, bool wrong)
+    {
+        NewDialog newDialog = new NewDialog();
+        newDialog.message = msg;
+        newDialog.speed = speed;
+        newDialog.isWrong = wrong;
+        
+        _dialogBuffer.Add(newDialog);
     }
 
 }
