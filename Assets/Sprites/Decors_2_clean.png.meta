@@ -8,6 +8,18 @@ TextureImporter:
   - first:
       213: 2192310886620998638
     second: Decors_2_clean_1
+  - first:
+      213: -6030405044121064978
+    second: Decors_2_clean_2_Table
+  - first:
+      213: 6335446257692325327
+    second: Decors_2_clean_3_Echec
+  - first:
+      213: -6112533297507550810
+    second: Decors_3_clean_1_Bureau
+  - first:
+      213: -6578546564662559306
+    second: Decors_2_clean_5
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -103,7 +115,7 @@ TextureImporter:
         width: 2029
         height: 2771
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -124,7 +136,7 @@ TextureImporter:
         width: 2493
         height: 1917
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -132,6 +144,69 @@ TextureImporter:
       bones: []
       spriteID: eeb2442d227ac6e10800000000000000
       internalID: 2192310886620998638
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Decors_2_clean_2_Table
+      rect:
+        serializedVersion: 2
+        x: 2615
+        y: 2599
+        width: 352
+        height: 236
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ee9a0751092bf4ca0800000000000000
+      internalID: -6030405044121064978
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Decors_2_clean_3_Echec
+      rect:
+        serializedVersion: 2
+        x: 2930
+        y: 1762
+        width: 347
+        height: 247
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fc534530ec60ce750800000000000000
+      internalID: 6335446257692325327
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Decors_3_clean_1_Bureau
+      rect:
+        serializedVersion: 2
+        x: 1918
+        y: 1447
+        width: 263
+        height: 132
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6a9b05cf95beb2ba0800000000000000
+      internalID: -6112533297507550810
       vertices: []
       indices: 
       edges: []
