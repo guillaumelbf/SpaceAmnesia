@@ -73,6 +73,14 @@ public class ChatBox : MonoBehaviour
             isTalking = true;
             _currTalkTime = maxTalkTime;
         }
+        else if(isWriting && Input.GetKeyDown(KeyCode.Escape))
+        {
+            _chatBox.SetActive(false);
+            msgChatBox = "";
+            isWriting = false;
+            isTalking = false;
+        }
+
         if (isTalking)
         {
             _currTalkTime -= Time.deltaTime;
