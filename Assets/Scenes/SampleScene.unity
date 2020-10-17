@@ -1851,6 +1851,19 @@ MonoBehaviour:
   audioSource1: {fileID: 456043806}
   audioSource2: {fileID: 763945195}
   currentRoom: 0
+  timedDialog:
+    inactiveTime: 8.13
+    currInactiveTime: 0
+    currDialog: 0
+    dialogs:
+    - adakor
+    - super
+    - oui
+    - non
+    - bon ok
+    - "peut-\xEAtre"
+    - effectivement
+    - gg
 --- !u!4 &1337429909
 Transform:
   m_ObjectHideFlags: 0
@@ -2857,6 +2870,18 @@ PrefabInstance:
     - target: {fileID: 3857675302935802118, guid: c401a51fa899ce64898d85b5fa5e29a5, type: 3}
       propertyPath: Dialogs.Array.data[2].speed
       value: 0.06
+      objectReference: {fileID: 0}
+    - target: {fileID: 3857675302935802118, guid: c401a51fa899ce64898d85b5fa5e29a5, type: 3}
+      propertyPath: Dialogs.Array.data[0].visualHint
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3857675302935802118, guid: c401a51fa899ce64898d85b5fa5e29a5, type: 3}
+      propertyPath: Dialogs.Array.data[1].visualHint
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3857675302935802118, guid: c401a51fa899ce64898d85b5fa5e29a5, type: 3}
+      propertyPath: Dialogs.Array.data[2].visualHint
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3857675302935802119, guid: c401a51fa899ce64898d85b5fa5e29a5, type: 3}
       propertyPath: m_LocalPosition.x
