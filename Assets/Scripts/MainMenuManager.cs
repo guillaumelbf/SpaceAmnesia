@@ -12,8 +12,8 @@ public class MainMenuManager : MonoBehaviour
     [SerializeField] SceneAsset gameScene = null;
 
     [Header("MenuScreens")]
-    [SerializeField] GameObject titleScreen;
-    [SerializeField] GameObject optionScreen;
+    [SerializeField] GameObject titleScreen = null;
+    [SerializeField] GameObject optionScreen = null;
 
     [Header("TitleScreen")]
     [SerializeField] Button playButton = null;
@@ -22,7 +22,7 @@ public class MainMenuManager : MonoBehaviour
 
     [Header("OptionScreen")]
     [SerializeField] Slider masterVolume = null;
-    [SerializeField] Slider fxVolume = null;
+    //[SerializeField] Slider fxVolume = null;
     [SerializeField] Button backButton = null;
     [SerializeField] AudioMixer masterVolumeAudio = null;
 
