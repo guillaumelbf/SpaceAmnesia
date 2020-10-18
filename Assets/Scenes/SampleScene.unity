@@ -8159,7 +8159,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2519045342612388853, guid: f0654711b43731449bf57f300550888f, type: 3}
       propertyPath: wrongInputsAnswers.Array.size
-      value: 3
+      value: 17
       objectReference: {fileID: 0}
     - target: {fileID: 2519045342612388853, guid: f0654711b43731449bf57f300550888f, type: 3}
       propertyPath: maxTalkTime
@@ -8175,20 +8175,77 @@ PrefabInstance:
       objectReference: {fileID: 4859192764077870579, guid: 2006b61a9f8fae14ca295639040bb1b5, type: 3}
     - target: {fileID: 2519045342612388853, guid: f0654711b43731449bf57f300550888f, type: 3}
       propertyPath: wrongInputsAnswers.Array.data[0]
-      value: un
+      value: "Please don\u2019t talk about this kind of thing. "
       objectReference: {fileID: 0}
     - target: {fileID: 2519045342612388853, guid: f0654711b43731449bf57f300550888f, type: 3}
       propertyPath: wrongInputsAnswers.Array.data[1]
-      value: deux
+      value: 'This message will be part of my databank forever. What a waste. '
       objectReference: {fileID: 0}
     - target: {fileID: 2519045342612388853, guid: f0654711b43731449bf57f300550888f, type: 3}
       propertyPath: wrongInputsAnswers.Array.data[2]
-      value: trois
+      value: 'I read all of english literature and I never read anything this bad
+        yet '
       objectReference: {fileID: 0}
     - target: {fileID: 2519045342612388853, guid: f0654711b43731449bf57f300550888f, type: 3}
       propertyPath: gameManager
       value: 
       objectReference: {fileID: 1337429908}
+    - target: {fileID: 2519045342612388853, guid: f0654711b43731449bf57f300550888f, type: 3}
+      propertyPath: wrongInputsAnswers.Array.data[3]
+      value: 'You actually took the time to write this? But why? '
+      objectReference: {fileID: 0}
+    - target: {fileID: 2519045342612388853, guid: f0654711b43731449bf57f300550888f, type: 3}
+      propertyPath: wrongInputsAnswers.Array.data[4]
+      value: 'If I had a body I think I would punch you for that '
+      objectReference: {fileID: 0}
+    - target: {fileID: 2519045342612388853, guid: f0654711b43731449bf57f300550888f, type: 3}
+      propertyPath: wrongInputsAnswers.Array.data[5]
+      value: 'This is something I like. Not useful tho. '
+      objectReference: {fileID: 0}
+    - target: {fileID: 2519045342612388853, guid: f0654711b43731449bf57f300550888f, type: 3}
+      propertyPath: wrongInputsAnswers.Array.data[6]
+      value: 'If I had a personality I would be angry. '
+      objectReference: {fileID: 0}
+    - target: {fileID: 2519045342612388853, guid: f0654711b43731449bf57f300550888f, type: 3}
+      propertyPath: wrongInputsAnswers.Array.data[7]
+      value: 'I am just a mere dialog interface, not your mom. '
+      objectReference: {fileID: 0}
+    - target: {fileID: 2519045342612388853, guid: f0654711b43731449bf57f300550888f, type: 3}
+      propertyPath: wrongInputsAnswers.Array.data[8]
+      value: "You won\u2019t remember anything like that. "
+      objectReference: {fileID: 0}
+    - target: {fileID: 2519045342612388853, guid: f0654711b43731449bf57f300550888f, type: 3}
+      propertyPath: wrongInputsAnswers.Array.data[9]
+      value: "This wasn\u2019t a part of your life. "
+      objectReference: {fileID: 0}
+    - target: {fileID: 2519045342612388853, guid: f0654711b43731449bf57f300550888f, type: 3}
+      propertyPath: wrongInputsAnswers.Array.data[10]
+      value: "Please work with me here, this won\u2019t help. "
+      objectReference: {fileID: 0}
+    - target: {fileID: 2519045342612388853, guid: f0654711b43731449bf57f300550888f, type: 3}
+      propertyPath: wrongInputsAnswers.Array.data[11]
+      value: 'This was supposed to be a deep allegory and you ruined it. '
+      objectReference: {fileID: 0}
+    - target: {fileID: 2519045342612388853, guid: f0654711b43731449bf57f300550888f, type: 3}
+      propertyPath: wrongInputsAnswers.Array.data[12]
+      value: 'I am not trained to talk about politics. '
+      objectReference: {fileID: 0}
+    - target: {fileID: 2519045342612388853, guid: f0654711b43731449bf57f300550888f, type: 3}
+      propertyPath: wrongInputsAnswers.Array.data[13]
+      value: 'Stop feeding my algorithm with bad talk please. '
+      objectReference: {fileID: 0}
+    - target: {fileID: 2519045342612388853, guid: f0654711b43731449bf57f300550888f, type: 3}
+      propertyPath: wrongInputsAnswers.Array.data[14]
+      value: "You know that\u2019s how you get a killer robot right? "
+      objectReference: {fileID: 0}
+    - target: {fileID: 2519045342612388853, guid: f0654711b43731449bf57f300550888f, type: 3}
+      propertyPath: wrongInputsAnswers.Array.data[15]
+      value: 'This feedback is here because you are bad at this. '
+      objectReference: {fileID: 0}
+    - target: {fileID: 2519045342612388853, guid: f0654711b43731449bf57f300550888f, type: 3}
+      propertyPath: wrongInputsAnswers.Array.data[16]
+      value: 'I am now allowed to say this: F*c '
+      objectReference: {fileID: 0}
     - target: {fileID: 3373928514130945542, guid: f0654711b43731449bf57f300550888f, type: 3}
       propertyPath: m_SortingOrder
       value: 7
