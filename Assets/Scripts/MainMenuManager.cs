@@ -4,6 +4,7 @@ using Unity.Profiling;
 using UnityEditor;
 using UnityEngine;
 using UnityEngine.Audio;
+using UnityEngine.EventSystems;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
@@ -22,9 +23,15 @@ public class MainMenuManager : MonoBehaviour
 
     [Header("OptionScreen")]
     [SerializeField] Slider masterVolume = null;
-    //[SerializeField] Slider fxVolume = null;
+    [SerializeField] Slider musicVolume = null;
+    [SerializeField] Slider fxVolume = null;
     [SerializeField] Button backButton = null;
     [SerializeField] AudioMixer masterVolumeAudio = null;
+
+    [Header("Audio")]
+    [SerializeField] AudioSource fxSource = null;
+    [SerializeField] AudioClip hoverButton = null;
+    [SerializeField] AudioClip clickButton = null;
 
     [Header("FadeScreen")]
     [SerializeField] Image fadeOutImage = null;
@@ -42,6 +49,8 @@ public class MainMenuManager : MonoBehaviour
     {
         // Init master volume with the slider
         masterVolumeAudio.SetFloat("MasterVolume",-50);
+        masterVolumeAudio.SetFloat("MusicVolume",0);
+        masterVolumeAudio.SetFloat("FxVolume", 0);
 
         maxFadeInTime = fadeInTime;
         maxFadeOutTime = fadeOutTime;
@@ -50,8 +59,11 @@ public class MainMenuManager : MonoBehaviour
         optionButton.onClick.AddListener(showOptions);
         quitButton.onClick.AddListener(quitScene);
 
-        backButton.onClick.AddListener(showTitleScreen);
         masterVolume.onValueChanged.AddListener(changeMasterValue);
+        musicVolume.onValueChanged.AddListener(changeMusicValue);
+        fxVolume.onValueChanged.AddListener(changeFxValue);
+
+        backButton.onClick.AddListener(showTitleScreen);
     }
 
     // Update is called once per frame
@@ -83,7 +95,10 @@ public class MainMenuManager : MonoBehaviour
             masterVolumeAudio.SetFloat("MasterVolume", Mathf.Lerp(currentVol, -50, 0.001f)); // Fade out sound
 
             if (fadeOutTime <= 0)
+            {
+                masterVolumeAudio.SetFloat("MasterVolume", 0);
                 SceneManager.LoadScene(gameScene.name);
+            }
         }
     }
 
@@ -115,8 +130,27 @@ public class MainMenuManager : MonoBehaviour
         masterVolumeAudio.SetFloat("MasterVolume",sliderToVolume(sliderValue));
     }
 
+    void changeMusicValue(float sliderValue)
+    {
+        masterVolumeAudio.SetFloat("MusicVolume", sliderToVolume(sliderValue));
+    }
+
+    void changeFxValue(float sliderValue)
+    {
+        masterVolumeAudio.SetFloat("FxVolume", sliderToVolume(sliderValue));
+    }
+
     float sliderToVolume(float sliderValue)
     {
         return Mathf.Log10(sliderValue) * 20;
+    }
+
+    public void playHoveredSound()
+    {
+        fxSource.PlayOneShot(hoverButton);
+    }
+    public void playClickSound()
+    {
+        fxSource.PlayOneShot(clickButton);
     }
 }

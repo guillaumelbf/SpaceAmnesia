@@ -16,7 +16,7 @@ public enum EGameRoom
 public class GameManager : MonoBehaviour
 {
     [Header("Camera")]
-    [SerializeField] GameObject gameObjectPoint1  = null;
+    //[SerializeField] GameObject gameObjectPoint1  = null;
     [SerializeField] GameObject gameObjectPoint2  = null;
     [SerializeField] GameObject gameObjectPoint3  = null;
     [SerializeField] float lerpSpeed = 0;

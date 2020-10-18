@@ -8,7 +8,7 @@ public class SpriteManager : MonoBehaviour
     [SerializeField] List<SpriteRenderer> spriteList = null;
 
     [Header("Player")]
-    [SerializeField] GameObject player;
+    [SerializeField] GameObject player = null;
 
     // Start is called before the first frame update
     void Start()
