@@ -10,7 +10,7 @@ using UnityEngine.UI;
 
 public class MainMenuManager : MonoBehaviour
 {
-    [SerializeField] SceneAsset gameScene = null;
+    [SerializeField] string sceneName = null;
 
     [Header("MenuScreens")]
     [SerializeField] GameObject titleScreen = null;
@@ -97,7 +97,7 @@ public class MainMenuManager : MonoBehaviour
             if (fadeOutTime <= 0)
             {
                 masterVolumeAudio.SetFloat("MasterVolume", 0);
-                SceneManager.LoadScene(gameScene.name);
+                SceneManager.LoadScene(sceneName);
             }
         }
     }

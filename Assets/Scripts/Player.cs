@@ -27,6 +27,9 @@ public class Player : MonoBehaviour
     
     public GameObject canvasTutorial;
     private bool _inTutorial;
+
+    public GameObject canvasOptions;
+    private bool _inPause;
     
     // Start is called before the first frame update
     void Start()
@@ -40,6 +43,7 @@ public class Player : MonoBehaviour
         
         canvasTutorial.SetActive(true);
         _inTutorial = true;
+        _inPause = false;
     }
 
     // Update is called once per frame
@@ -49,6 +53,17 @@ public class Player : MonoBehaviour
         {
             _inTutorial = false;
             canvasTutorial.SetActive(false);
+        }
+
+        if (_inPause && Input.GetKeyDown(KeyCode.Escape))
+        {
+            _inPause = false;
+            canvasOptions.SetActive(false);
+        }
+        else if (!_inPause && !_chatBox.isWriting && Input.GetKeyDown(KeyCode.Escape))
+        {
+            _inPause = true;
+            canvasOptions.SetActive(true);
         }
     }
 
@@ -64,7 +79,7 @@ public class Player : MonoBehaviour
 
     void verticalMove(float _direction)
     {
-        if (_chatBox.isWriting || Dialog.isPrinting || Dialog.waitingAction || _inTutorial)
+        if (_chatBox.isWriting || Dialog.isPrinting || Dialog.waitingAction || _inTutorial || _inPause)
             return;
         if(_direction.Equals(1))
         {
@@ -80,7 +95,7 @@ public class Player : MonoBehaviour
 
     void horizontalMove(float _direction)
     {
-        if (_chatBox.isWriting || Dialog.isPrinting || Dialog.waitingAction || _inTutorial)
+        if (_chatBox.isWriting || Dialog.isPrinting || Dialog.waitingAction || _inTutorial || _inPause)
             return;
         if (_direction.Equals(1))
         {
