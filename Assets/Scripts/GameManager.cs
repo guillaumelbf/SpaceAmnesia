@@ -92,7 +92,7 @@ public class GameManager : MonoBehaviour
     public void UpdateTimedDialog()
     {
         timedDialog.currInactiveTime  += Time.deltaTime;
-        if (timedDialog.currInactiveTime >= timedDialog.inactiveTime)
+        if (timedDialog.currInactiveTime >= timedDialog.inactiveTime && timedDialog.dialogs.Length != 0)
         {
             Dialog.AddDialogToBuffer(timedDialog.dialogs[timedDialog.currDialog], 0.08f, 2);
             timedDialog.currDialog++;
