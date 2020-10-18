@@ -31,7 +31,8 @@ public class Player : MonoBehaviour
     
     public GameObject canvasTutorial;
     private bool _inTutorial;
-
+    private float _cdTutorial;
+    
     public GameObject canvasOptions;
     private bool _inPause;
     
@@ -48,12 +49,15 @@ public class Player : MonoBehaviour
         canvasTutorial.SetActive(true);
         _inTutorial = true;
         _inPause = false;
+        _cdTutorial = 4.0f;
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (_inTutorial && (Input.anyKeyDown || Input.GetMouseButtonDown(0)))
+        if (_inTutorial && _cdTutorial > 0.0f)
+            _cdTutorial -= Time.deltaTime;
+        if (_inTutorial && _cdTutorial <= 0.0f && (Input.anyKeyDown || Input.GetMouseButtonDown(0)))
         {
             _inTutorial = false;
             canvasTutorial.SetActive(false);
