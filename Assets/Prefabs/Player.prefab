@@ -267,6 +267,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 0
+  skin: {fileID: 0}
+  canvasTutorial: {fileID: 8163183749413169356, guid: 085d03d710ece164f80477c8adf041d5, type: 3}
 --- !u!114 &2519045342612388853
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -285,6 +287,8 @@ MonoBehaviour:
   thinkingBackgroundSprite: {fileID: 21300000, guid: 252a42a715035e94c9b1b8e94dc83002, type: 3}
   talkingBackgroundSprite: {fileID: 21300000, guid: 5148581cb8fcba443bd520b892d23b01, type: 3}
   maxTalkTime: 0
+  wrongInputsAnswers: []
+  gameManager: {fileID: 0}
 --- !u!1 &7749260355696224258
 GameObject:
   m_ObjectHideFlags: 0
