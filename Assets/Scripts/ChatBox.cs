@@ -32,6 +32,8 @@ public class ChatBox : MonoBehaviour
     public string[] wrongInputsAnswers;
     private int it;
 
+    [SerializeField] GameManager gameManager = null;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -96,7 +98,8 @@ public class ChatBox : MonoBehaviour
             {
                 isTalking = false;
                 _chatBox.SetActive(false);
-                CompareMessage();
+                if (!gameManager.compareMessage(msgChatBox))
+                    AddWrongAnswer();
             }
         }
         if (isWriting)
@@ -110,27 +113,6 @@ public class ChatBox : MonoBehaviour
             
         }
 
-    }
-
-    public void CompareMessage()
-    {
-        //ptet checker si le joueur est dans la bonne salle pour pas cut
-        if (msgChatBox.Contains("Alone") || msgChatBox.Contains("alone"))
-        {
-            //Trigger porte 1
-        }
-        else if (msgChatBox.Contains("Together") || msgChatBox.Contains("together"))
-        {
-            //Trigger porte 2
-        }
-        else if (msgChatBox.Contains("Paradox") || msgChatBox.Contains("paradox"))
-        {
-            //Trigger bouton zone 3
-        }
-        else
-        {
-            AddWrongAnswer();
-        }
     }
 
     public void AddWrongAnswer()
