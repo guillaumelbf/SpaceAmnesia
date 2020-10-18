@@ -13,6 +13,20 @@ public enum EGameRoom
     ROOM3
 }
 
+[Serializable]
+public struct TimedDialog
+{
+    public float inactiveTime;
+    
+    [HideInInspector]
+    public float currInactiveTime;
+
+    [HideInInspector]
+    public int currDialog;
+
+    public string[] dialogs;
+};
+
 public class GameManager : MonoBehaviour
 {
     [Header("Camera")]
@@ -26,18 +40,26 @@ public class GameManager : MonoBehaviour
     [SerializeField] AudioSource audioSource2 = null;
 
     public EGameRoom currentRoom = EGameRoom.ROOM1;
-
+    
+    public TimedDialog timedDialog;
+    
     Camera mainCamera = null;
 
     // Start is called before the first frame update
     void Start()
     {
         mainCamera = Camera.main;
+        timedDialog.currDialog = 0;
+        timedDialog.currInactiveTime = 0.0f;
     }
 
     // Update is called once per frame
     void Update()
     {
+        if (Dialog.IsInDialog())
+            timedDialog.currInactiveTime = 0.0f;
+        UpdateTimedDialog();
+        
         switch (currentRoom)
         {
             case EGameRoom.ROOM1:
@@ -65,5 +87,16 @@ public class GameManager : MonoBehaviour
             audioSource1.mute = false;
         if (newRoom == 2)
             audioSource2.mute = false;
+    }
+
+    public void UpdateTimedDialog()
+    {
+        timedDialog.currInactiveTime  += Time.deltaTime;
+        if (timedDialog.currInactiveTime >= timedDialog.inactiveTime)
+        {
+            Dialog.AddDialogToBuffer(timedDialog.dialogs[timedDialog.currDialog], 0.08f, 2);
+            timedDialog.currDialog++;
+            timedDialog.currInactiveTime = 0.0f;
+        }
     }
 }

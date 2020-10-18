@@ -58,6 +58,7 @@ public class Dialog : MonoBehaviour
             _rightInput.SetActive(false);
             _chatBox = GameObject.FindGameObjectWithTag("Player").GetComponent<ChatBox>();
             _dialogBuffer = new List<NewDialog>();
+            freezeTimeAfterPrint = 1.0f;
         }
         else
             Destroy(this);
@@ -145,4 +146,10 @@ public class Dialog : MonoBehaviour
         _dialogBuffer.Add(newDialog);
     }
 
+    public static bool IsInDialog()
+    {
+        if (isPrinting || waitingAction)
+            return true;
+        return false;
+    }
 }
