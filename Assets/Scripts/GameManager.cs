@@ -25,6 +25,7 @@ public struct TimedDialog
     public int currDialog;
 
     public string[] dialogs;
+
 };
 
 public class GameManager : MonoBehaviour

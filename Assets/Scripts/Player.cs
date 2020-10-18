@@ -24,6 +24,10 @@ public class Player : MonoBehaviour
     private Vector3 baseSkinScale = Vector3.zero;
     private Vector3 reverseSideSkinScale = Vector3.zero;
 
+    
+    public GameObject canvasTutorial;
+    private bool _inTutorial;
+    
     // Start is called before the first frame update
     void Start()
     {
@@ -33,11 +37,19 @@ public class Player : MonoBehaviour
 
         baseSkinScale = skin.transform.localScale;
         reverseSideSkinScale = new Vector3(baseSkinScale.x * -1,baseSkinScale.y,baseSkinScale.z);
+        
+        canvasTutorial.SetActive(true);
+        _inTutorial = true;
     }
 
     // Update is called once per frame
     void Update()
     {
+        if (_inTutorial && (Input.anyKeyDown || Input.GetMouseButtonDown(0)))
+        {
+            _inTutorial = false;
+            canvasTutorial.SetActive(false);
+        }
     }
 
     private void FixedUpdate()
@@ -52,7 +64,7 @@ public class Player : MonoBehaviour
 
     void verticalMove(float _direction)
     {
-        if (_chatBox.isWriting || Dialog.isPrinting || Dialog.waitingAction)
+        if (_chatBox.isWriting || Dialog.isPrinting || Dialog.waitingAction || _inTutorial)
             return;
         if(_direction.Equals(1))
         {
@@ -68,7 +80,7 @@ public class Player : MonoBehaviour
 
     void horizontalMove(float _direction)
     {
-        if (_chatBox.isWriting || Dialog.isPrinting || Dialog.waitingAction)
+        if (_chatBox.isWriting || Dialog.isPrinting || Dialog.waitingAction || _inTutorial)
             return;
         if (_direction.Equals(1))
         {

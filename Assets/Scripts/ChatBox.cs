@@ -110,7 +110,6 @@ public class ChatBox : MonoBehaviour
                 msgChatBox = msgChatBox.Remove(msgChatBox.Length - 1);
             _chatBoxTextPopUp.text = msgChatBox;
             _chatBoxBackground.size = new Vector2((_chatBoxTextPopUp.bounds.size.x * 0.01f) + 0.02f, 0.2f);
-            
         }
 
     }
