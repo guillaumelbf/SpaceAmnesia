@@ -58,8 +58,6 @@ public class GameManager : MonoBehaviour
     
     Camera mainCamera = null;
 
-    bool start = true;
-
     // Start is called before the first frame update
     void Start()
     {
@@ -71,11 +69,6 @@ public class GameManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(start)
-        {
-
-            return;
-        }
 
         if (Dialog.IsInDialog())
             timedDialog.currInactiveTime = 0.0f;
