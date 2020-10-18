@@ -4,7 +4,8 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEditor;
 using UnityEngine.Events;
-
+using UnityEngine.UI;
+using UnityEngine.Audio;
 
 public enum EGameRoom
 {
@@ -52,6 +53,12 @@ public class GameManager : MonoBehaviour
     [SerializeField] GameObject triggerEndButton = null;
     [SerializeField] GameObject disableTriggerPreEndButtonMessage = null;
 
+    [Header("OptionScreen")]
+    [SerializeField] AudioMixer masterVolumeAudio = null;
+    [SerializeField] Slider masterVolume = null;
+    [SerializeField] Slider musicVolume = null;
+    [SerializeField] Slider fxVolume = null;
+
     public EGameRoom currentRoom = EGameRoom.ROOM1;
     
     public TimedDialog timedDialog;
@@ -64,6 +71,10 @@ public class GameManager : MonoBehaviour
         mainCamera = Camera.main;
         timedDialog.currDialog = 0;
         timedDialog.currInactiveTime = 0.0f;
+
+        masterVolume.onValueChanged.AddListener(changeMasterValue);
+        musicVolume.onValueChanged.AddListener(changeMusicValue);
+        fxVolume.onValueChanged.AddListener(changeFxValue);
     }
 
     // Update is called once per frame
@@ -157,5 +168,24 @@ public class GameManager : MonoBehaviour
     public void End()
     {
 
+    }
+
+    void changeMasterValue(float sliderValue)
+    {
+        masterVolumeAudio.SetFloat("MasterVolume", sliderToVolume(sliderValue));
+    }
+
+    void changeMusicValue(float sliderValue)
+    {
+        masterVolumeAudio.SetFloat("MusicVolume", sliderToVolume(sliderValue));
+    }
+
+    void changeFxValue(float sliderValue)
+    {
+        masterVolumeAudio.SetFloat("FxVolume", sliderToVolume(sliderValue));
+    }
+    float sliderToVolume(float sliderValue)
+    {
+        return Mathf.Log10(sliderValue) * 20;
     }
 }
