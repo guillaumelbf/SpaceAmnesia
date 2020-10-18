@@ -7,6 +7,10 @@ public class TriggerDialog : MonoBehaviour
 {
     [SerializeField]
     public NewDialog[] Dialogs;
+    
+    [Header("Sound")]
+    [SerializeField] AudioSource fxSource = null;
+    [SerializeField] AudioClip soundToplay = null;
 
     private ChatBox _player;
     //public string dialogText;
@@ -25,7 +29,7 @@ public class TriggerDialog : MonoBehaviour
         if (_isIn && Input.GetButtonDown("Interact") && !Dialog.isPrinting && 
             !Dialog.waitingAction && !_player.isWriting)
         {
-            
+            fxSource.PlayOneShot(soundToplay);
             foreach (NewDialog newDiag in Dialogs)
             {
                 _isIn = false;

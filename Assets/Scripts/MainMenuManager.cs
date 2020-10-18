@@ -96,7 +96,7 @@ public class MainMenuManager : MonoBehaviour
 
             if (fadeOutTime <= 0)
             {
-                masterVolumeAudio.SetFloat("MasterVolume", 0);
+                masterVolumeAudio.SetFloat("MasterVolume", sliderToVolume(masterVolume.value));
                 SceneManager.LoadScene(gameScene.name);
             }
         }

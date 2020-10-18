@@ -39,6 +39,9 @@ public class GameManager : MonoBehaviour
     [Header("Audio")]
     [SerializeField] AudioSource audioSource1 = null;
     [SerializeField] AudioSource audioSource2 = null;
+    [SerializeField] AudioSource fxSource = null;
+    [SerializeField] AudioClip openDoorClip = null;
+    [SerializeField] AudioClip closeDoorClip = null;
 
     [Header("Door")]
     [SerializeField] GameObject door1 = null;
@@ -91,11 +94,13 @@ public class GameManager : MonoBehaviour
         {
             Dialog.AddDialogToBuffer("Alone? You’re not alone ! There is me.\nOh, but there are also of course the two you used to call friends.\nGo meet them, will you ? ", 0.1f, 1);
             door1.GetComponent<Animator>().SetBool("Open", true);
+            fxSource.PlayOneShot(openDoorClip);
         }
         else if (currentRoom == EGameRoom.ROOM2 && (_message.Contains("Together") || _message.Contains("together")))
         {
             Dialog.AddDialogToBuffer("Yes together we’ll be able to revive your memories, I hope it will be enough.", 0.1f, 1);
             door2.GetComponent<Animator>().SetBool("Open", true);
+            fxSource.PlayOneShot(openDoorClip);
         }
         else if (currentRoom == EGameRoom.ROOM3 && (_message.Contains("Paradox") || _message.Contains("paradox")))
         {
@@ -118,11 +123,13 @@ public class GameManager : MonoBehaviour
         if(newRoom == 1)
         {
             audioSource1.mute = false;
+            fxSource.PlayOneShot(closeDoorClip);
             door1.GetComponent<Animator>().SetBool("Open", false);
         }
         if (newRoom == 2)
         {
             audioSource2.mute = false;
+            fxSource.PlayOneShot(closeDoorClip);
             door2.GetComponent<Animator>().SetBool("Open", false);
         }
     }
