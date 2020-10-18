@@ -1471,7 +1471,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3857675302935802118, guid: c401a51fa899ce64898d85b5fa5e29a5, type: 3}
       propertyPath: Dialogs.Array.data[2].message
-      value: 'With maths. \nAnd formulas '
+      value: With maths. \nAnd formulas.
       objectReference: {fileID: 0}
     - target: {fileID: 3857675302935802118, guid: c401a51fa899ce64898d85b5fa5e29a5, type: 3}
       propertyPath: Dialogs.Array.data[2].speed
@@ -1488,8 +1488,8 @@ PrefabInstance:
     - target: {fileID: 3857675302935802118, guid: c401a51fa899ce64898d85b5fa5e29a5, type: 3}
       propertyPath: Dialogs.Array.data[4].message
       value: "By the way, the guys simulating a worm and his brain (OpenWorm, you
-        can even search it) \\nbuilt a lego robot to put him on. Maybe I could put
-        0009LAH In a worm body\u2026 "
+        can even search it) built a lego robot to put him on. Maybe I could put 0009LAH
+        In a worm body\u2026 "
       objectReference: {fileID: 0}
     - target: {fileID: 3857675302935802118, guid: c401a51fa899ce64898d85b5fa5e29a5, type: 3}
       propertyPath: Dialogs.Array.data[4].speed
@@ -4799,7 +4799,7 @@ PrefabInstance:
     - target: {fileID: 3857675302935802118, guid: c401a51fa899ce64898d85b5fa5e29a5, type: 3}
       propertyPath: Dialogs.Array.data[1].message
       value: As our ship, the Enterpride USS, is to explore the most dangerous corners
-        of space, we \nneed it to be agile and easy to command.
+        of space, we need it to be agile and easy to command.
       objectReference: {fileID: 0}
     - target: {fileID: 3857675302935802118, guid: c401a51fa899ce64898d85b5fa5e29a5, type: 3}
       propertyPath: Dialogs.Array.data[1].speed
