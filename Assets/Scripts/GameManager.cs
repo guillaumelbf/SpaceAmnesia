@@ -6,6 +6,7 @@ using UnityEditor;
 using UnityEngine.Events;
 using UnityEngine.UI;
 using UnityEngine.Audio;
+using UnityEngine.SceneManagement;
 
 public enum EGameRoom
 {
@@ -167,7 +168,7 @@ public class GameManager : MonoBehaviour
 
     public void End()
     {
-
+        SceneManager.LoadScene("EndScene");
     }
 
     void changeMasterValue(float sliderValue)
