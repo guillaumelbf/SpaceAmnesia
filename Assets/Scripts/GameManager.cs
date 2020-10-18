@@ -47,11 +47,18 @@ public class GameManager : MonoBehaviour
     [SerializeField] GameObject door1 = null;
     [SerializeField] GameObject door2 = null;
 
+    [Header("End")]
+    [SerializeField] SpriteRenderer buttonGlass = null;
+    [SerializeField] GameObject triggerEndButton = null;
+    [SerializeField] GameObject disableTriggerPreEndButtonMessage = null;
+
     public EGameRoom currentRoom = EGameRoom.ROOM1;
     
     public TimedDialog timedDialog;
     
     Camera mainCamera = null;
+
+    bool start = true;
 
     // Start is called before the first frame update
     void Start()
@@ -64,6 +71,12 @@ public class GameManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if(start)
+        {
+
+            return;
+        }
+
         if (Dialog.IsInDialog())
             timedDialog.currInactiveTime = 0.0f;
         UpdateTimedDialog();
@@ -110,6 +123,9 @@ public class GameManager : MonoBehaviour
             Dialog.AddDialogToBuffer("If you hit the button on this paradox engine, you’ll be fulfilling your original goal and give \nme flesh, just like you were given.", 0.1f, 1);
             Dialog.AddDialogToBuffer("Please activate the paradox Engine now, you’ll need a helping hand to fix the ship… \nCaptain.", 0.1f, 1);
 
+            buttonGlass.sortingOrder = 0;
+            triggerEndButton.SetActive(true);
+            disableTriggerPreEndButtonMessage.SetActive(false);
         }
         else
             return false;
@@ -143,5 +159,10 @@ public class GameManager : MonoBehaviour
             timedDialog.currDialog++;
             timedDialog.currInactiveTime = 0.0f;
         }
+    }
+
+    public void End()
+    {
+
     }
 }
