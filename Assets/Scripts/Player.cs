@@ -20,6 +20,10 @@ public class Player : MonoBehaviour
     [SerializeField] float speed = 0;
     [SerializeField] GameObject skin = null;
 
+    [Header("Sounds")]
+    [SerializeField] AudioSource fxSource = null;
+    [SerializeField] AudioClip moveClip = null;
+
     private Vector2 curVeclocity = Vector2.zero;
     private Vector3 baseSkinScale = Vector3.zero;
     private Vector3 reverseSideSkinScale = Vector3.zero;
@@ -119,15 +123,19 @@ public class Player : MonoBehaviour
         switch (_anim)
         {
             case EAnim.IDLE:
+                fxSource.mute = true;
                 break;
             case EAnim.UP:
                 animator.SetBool("MoveUp", true);
+                fxSource.mute = false;
                 break;
             case EAnim.DOWN:
                 animator.SetBool("MoveDown", true);
+                fxSource.mute = false;
                 break;
             case EAnim.SIDE:
                 animator.SetBool("MoveSide", true);
+                fxSource.mute = false;
                 break;
             default:break;
         }
