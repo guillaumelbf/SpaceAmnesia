@@ -100,8 +100,8 @@ public class Dialog : MonoBehaviour
         else
         {
             _currTimeBetweenLetters -= Time.deltaTime;
-            if (Input.GetKey(KeyCode.Return))
-                _currTimeBetweenLetters -= 4.0f * Time.deltaTime;
+            if (Input.GetKey(KeyCode.Space))
+                _timeBetweenLetters = 0.0f;
             if (_currTimeBetweenLetters <= 0.0f)
             {
                 _currMessage += _messageToPrint[_currMessage.Length];
