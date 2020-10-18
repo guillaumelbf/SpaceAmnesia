@@ -29,6 +29,7 @@ public class MainMenuManager : MonoBehaviour
     [SerializeField] AudioMixer masterVolumeAudio = null;
 
     [Header("Audio")]
+    [SerializeField] AudioSource musicSource = null;
     [SerializeField] AudioSource fxSource = null;
     [SerializeField] AudioClip hoverButton = null;
     [SerializeField] AudioClip clickButton = null;
@@ -88,15 +89,13 @@ public class MainMenuManager : MonoBehaviour
         if(menuOut)
         {
             fadeOutTime -= Time.deltaTime;
-            float currentVol;
-            masterVolumeAudio.GetFloat("MasterVolume",out currentVol);
+            musicSource.volume = Mathf.Lerp(musicSource.volume, 0, 0.01f);
 
-            fadeOutImage.color = new Color(0f,0f,0f, (1 - (fadeOutTime / maxFadeOutTime))); // Fade out screen
-            masterVolumeAudio.SetFloat("MasterVolume", Mathf.Lerp(currentVol, -50, 0.001f)); // Fade out sound
+            fadeOutImage.color = new Color(0f,0f,0f, (1 - (fadeOutTime / maxFadeOutTime))); // Fade out screen            
 
             if (fadeOutTime <= 0)
             {
-                masterVolumeAudio.SetFloat("MasterVolume", sliderToVolume(masterVolume.value));
+                //masterVolumeAudio.SetFloat("MasterVolume", sliderToVolume(masterVolume.value));
                 SceneManager.LoadScene(sceneName);
             }
         }

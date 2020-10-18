@@ -1659,7 +1659,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1439965365
 RectTransform:
   m_ObjectHideFlags: 0
@@ -2774,6 +2774,7 @@ MonoBehaviour:
   fxVolume: {fileID: 1728341562}
   backButton: {fileID: 1946971663}
   masterVolumeAudio: {fileID: 24100000, guid: 8c246ef2800a6bf46906da08258d1d9b, type: 2}
+  musicSource: {fileID: 2053048749}
   fxSource: {fileID: 1650924358}
   hoverButton: {fileID: 8300000, guid: c6492918b23bf32468add3658adfb6f6, type: 3}
   clickButton: {fileID: 8300000, guid: d0f496ef8927f5749a70c256b7523585, type: 3}

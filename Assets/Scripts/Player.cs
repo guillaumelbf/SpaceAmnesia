@@ -22,7 +22,6 @@ public class Player : MonoBehaviour
 
     [Header("Sounds")]
     [SerializeField] AudioSource fxSource = null;
-    [SerializeField] AudioClip moveClip = null;
 
     private Vector2 curVeclocity = Vector2.zero;
     private Vector3 baseSkinScale = Vector3.zero;
