@@ -29,12 +29,16 @@ public class ChatBox : MonoBehaviour
     [SerializeField] public float maxTalkTime;
     private float _currTalkTime;
 
+    public string[] wrongInputsAnswers;
+    private int it;
+
     // Start is called before the first frame update
     void Start()
     {
         isWriting = false;
         isTalking = false;
         _currTalkTime = maxTalkTime;
+        it = 0;
 
         /*
          *  Setup chatbox components and objects in the script to avoid
@@ -73,7 +77,7 @@ public class ChatBox : MonoBehaviour
         else if (isWriting && Input.GetKeyDown(KeyCode.Return))
         {
             _chatBoxBackground.sprite = talkingBackgroundSprite;
-            isWriting = false;
+                isWriting = false;
             isTalking = true;
             _currTalkTime = maxTalkTime;
         }
@@ -92,7 +96,7 @@ public class ChatBox : MonoBehaviour
             {
                 isTalking = false;
                 _chatBox.SetActive(false);
-
+                CompareMessage();
             }
         }
         if (isWriting)
@@ -106,5 +110,19 @@ public class ChatBox : MonoBehaviour
             
         }
 
+    }
+
+    public void CompareMessage()
+    {
+        if (!msgChatBox.Contains("compliqué"))
+            AddWrongAnswer();    
+    }
+
+    public void AddWrongAnswer()
+    {
+        Dialog.AddDialogToBuffer(wrongInputsAnswers[it], 0.07f, 0);
+        it++;
+        if (it >= wrongInputsAnswers.Length)
+            it = 0;
     }
 }
